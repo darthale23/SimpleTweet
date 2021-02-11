@@ -46,9 +46,12 @@ public class TimelineActivity extends AppCompatActivity {
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-        swipeContainer.setOnRefreshListener((){
-            Log.i(TAG, "fetching new data!");
-            populateHomeTimeline();
+        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                Log.i(TAG, "fetching new data!");
+                populateHomeTimeline();
+            }
         });
 
 
